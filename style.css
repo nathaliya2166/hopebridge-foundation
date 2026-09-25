@@ -482,6 +482,22 @@ footer {
     font-size: 13px;
 }
 
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
 
 /* =========================
    MOBILE RESPONSIVE
@@ -492,7 +508,42 @@ footer {
     .nav-links {
         display: none;
     }
+.menu-toggle {
+    display: block;
+}
 
+.mobile-menu {
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    width: 90%;
+    background: #173a35;
+    padding: 25px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 15px;
+}
+
+.mobile-menu a:hover {
+    color: #d9ad73;
+}
+
+.mobile-donate {
+    background: #d79b55;
+    padding: 11px 15px;
+    text-align: center;
+    border-radius: 4px;
+}
     .navbar {
         width: 90%;
     }
