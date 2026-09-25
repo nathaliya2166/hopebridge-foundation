@@ -65,7 +65,7 @@ img {
     padding: 13px 25px;
     border-radius: 4px;
     font-weight: bold;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .primary-button {
@@ -75,17 +75,20 @@ img {
 
 .primary-button:hover {
     background: #b97d3d;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .secondary-button {
     border: 1px solid white;
     color: white;
+    transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
     background: white;
     color: #173a35;
+    transform: translateY(-3px);
 }
 
 
@@ -169,7 +172,21 @@ header {
 .hero-content {
     max-width: 720px;
     color: white;
+
+    animation: heroFade 1s ease forwards;
 }
+
+@keyframes heroFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 .eyebrow {
     color: #e3bd8a;
@@ -247,7 +264,13 @@ header {
     background: white;
     padding: 35px 28px;
     border-radius: 8px;
-    transition: 0.3s ease;
+    transition: all 0.35s ease;
+    box-shadow: 0 5px 20px rgba(23, 58, 53, 0.05);
+}
+
+.cause-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(23, 58, 53, 0.12);
 }
 
 .cause-card:hover {
@@ -497,6 +520,26 @@ footer {
 
 .mobile-menu {
     display: none;
+}
+
+/* =========================
+   IMAGE HOVER EFFECTS
+========================= */
+
+.section-image,
+.campaign-image {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.section-image img,
+.campaign-image img {
+    transition: transform 0.6s ease;
+}
+
+.section-image:hover img,
+.campaign-image:hover img {
+    transform: scale(1.04);
 }
 
 /* =========================
