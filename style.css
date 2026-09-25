@@ -1,6 +1,6 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* ==============================
+   RESET & GLOBAL
+============================== */
 
 * {
     margin: 0;
@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #1d2b2a;
+    color: #24332f;
     background: #f8f7f2;
     line-height: 1.7;
 }
@@ -29,20 +29,31 @@ img {
     display: block;
 }
 
+button,
+input,
+textarea {
+    font: inherit;
+}
+
 .section {
     padding: 100px 8%;
 }
 
+
+/* ==============================
+   TYPOGRAPHY
+============================== */
+
 .section-label {
-    color: #5d806d;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    color: #668574;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
 }
 
 .section-heading {
-    max-width: 700px;
+    max-width: 680px;
     margin: 0 auto 55px;
     text-align: center;
 }
@@ -52,11 +63,20 @@ img {
 .campaign-content h2,
 .contact-content h2 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 45px;
-    line-height: 1.2;
-    margin-bottom: 20px;
     color: #173a35;
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.15;
+    margin-bottom: 20px;
 }
+
+.section-heading > p:last-child {
+    color: #6c7773;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
 
 .primary-button,
 .secondary-button,
@@ -64,7 +84,7 @@ img {
     display: inline-block;
     padding: 13px 25px;
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: 700;
     transition: all 0.3s ease;
 }
 
@@ -74,15 +94,14 @@ img {
 }
 
 .primary-button:hover {
-    background: #b97d3d;
+    background: #bd7f3e;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .secondary-button {
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     color: white;
-    transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
@@ -92,20 +111,21 @@ img {
 }
 
 
-/* =========================
+/* ==============================
    NAVIGATION
-========================= */
+============================== */
 
 header {
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
+    width: 100%;
+    z-index: 100;
 }
 
 .navbar {
     width: 84%;
+    max-width: 1300px;
     margin: auto;
     padding: 25px 0;
     display: flex;
@@ -116,7 +136,7 @@ header {
 .logo {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 27px;
-    font-weight: bold;
+    font-weight: 700;
     color: white;
     letter-spacing: -0.5px;
 }
@@ -127,6 +147,7 @@ header {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 30px;
     list-style: none;
 }
@@ -134,7 +155,7 @@ header {
 .nav-links a {
     color: white;
     font-size: 14px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -148,22 +169,41 @@ header {
 }
 
 .nav-button:hover {
-    background: #b97d3d;
+    background: #bd7f3e;
 }
 
 
-/* =========================
+/* MOBILE MENU */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ==============================
    HERO
-========================= */
+============================== */
 
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 140px 8% 100px;
+    padding: 150px 8% 100px;
 
     background:
-        linear-gradient(rgba(15, 43, 39, 0.72), rgba(15, 43, 39, 0.72)),
+        linear-gradient(
+            rgba(16, 48, 43, 0.76),
+            rgba(16, 48, 43, 0.76)
+        ),
         url("https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=1800&q=85");
 
     background-size: cover;
@@ -171,43 +211,30 @@ header {
 }
 
 .hero-content {
-    max-width: 720px;
+    max-width: 760px;
     color: white;
-
     animation: heroFade 1s ease forwards;
 }
 
-@keyframes heroFade {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 .eyebrow {
     color: #e3bd8a;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 18px;
 }
 
 .hero h1 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(50px, 7vw, 85px);
-    line-height: 1.05;
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 1.03;
     margin-bottom: 25px;
 }
 
 .hero-content > p:not(.eyebrow) {
-    max-width: 600px;
+    max-width: 620px;
+    color: #f1f3ef;
     font-size: 18px;
-    color: #f2f2ed;
     margin-bottom: 35px;
 }
 
@@ -217,39 +244,62 @@ header {
     flex-wrap: wrap;
 }
 
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-/* =========================
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==============================
    ABOUT
-========================= */
+============================== */
 
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
     align-items: center;
+    gap: 80px;
+    background: #f8f7f2;
+}
+
+.section-image {
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .section-image img {
-    height: 520px;
+    height: 530px;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.section-image:hover img {
+    transform: scale(1.04);
 }
 
 .section-content > p:not(.section-label) {
-    color: #63706d;
+    color: #68736f;
     margin-bottom: 18px;
 }
 
 .text-link {
     display: inline-block;
     color: #527462;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 700;
+    margin-top: 8px;
 }
 
 
-/* =========================
+/* ==============================
    CAUSES
-========================= */
+============================== */
 
 .causes {
     background: #eef0e8;
@@ -258,15 +308,15 @@ header {
 .cause-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    gap: 25px;
 }
 
 .cause-card {
     background: white;
     padding: 35px 28px;
     border-radius: 8px;
-    transition: all 0.35s ease;
     box-shadow: 0 5px 20px rgba(23, 58, 53, 0.05);
+    transition: all 0.35s ease;
 }
 
 .cause-card:hover {
@@ -274,45 +324,38 @@ header {
     box-shadow: 0 15px 35px rgba(23, 58, 53, 0.12);
 }
 
-.cause-card:hover {
-    transform: translateY(-7px);
-}
-
 .cause-icon {
-    font-size: 35px;
+    font-size: 34px;
     margin-bottom: 20px;
 }
 
 .cause-card h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
     color: #173a35;
+    font-size: 23px;
+    line-height: 1.25;
     margin-bottom: 15px;
 }
 
 .cause-card p {
-    color: #68726f;
-    font-size: 15px;
+    color: #68736f;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 .cause-card a {
     color: #527462;
-    font-weight: bold;
     font-size: 14px;
+    font-weight: 700;
 }
 
 
-/* =========================
+/* ==============================
    IMPACT
-========================= */
+============================== */
 
 .impact {
     background: #173a35;
-    color: white;
-}
-
-.impact .section-heading h2 {
     color: white;
 }
 
@@ -320,17 +363,21 @@ header {
     color: #d9ad73;
 }
 
+.impact .section-heading h2 {
+    color: white;
+}
+
 .impact-grid {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    text-align: center;
 }
 
 .impact-item {
+    text-align: center;
     padding: 20px;
-    border-right: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .impact-item:last-child {
@@ -339,41 +386,52 @@ header {
 
 .impact-item h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 48px;
     color: #e0b77e;
-    margin-bottom: 5px;
+    font-size: 48px;
+    margin-bottom: 4px;
 }
 
 .impact-item p {
-    color: #e4e8e5;
+    color: #dce3df;
 }
 
 
-/* =========================
+/* ==============================
    CAMPAIGN
-========================= */
+============================== */
 
 .campaign {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 70px;
     align-items: center;
+    gap: 75px;
+    background: #f8f7f2;
+}
+
+.campaign-image {
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .campaign-image img {
     height: 480px;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.campaign-image:hover img {
+    transform: scale(1.04);
 }
 
 .campaign-content > p:not(.section-label) {
-    color: #68726f;
+    color: #68736f;
     margin-bottom: 30px;
 }
 
 
-/* =========================
+/* ==============================
    GET INVOLVED
-========================= */
+============================== */
 
 .get-involved {
     background: #eef0e8;
@@ -382,51 +440,59 @@ header {
 .involvement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 28px;
 }
 
 .involvement-card {
     background: white;
-    padding: 40px 30px;
+    padding: 38px 30px;
     border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.involvement-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(23, 58, 53, 0.08);
 }
 
 .involvement-card h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 27px;
     color: #173a35;
-    margin-bottom: 15px;
+    font-size: 27px;
+    margin-bottom: 14px;
 }
 
 .involvement-card p {
-    color: #68726f;
+    color: #68736f;
     margin-bottom: 20px;
 }
 
 .involvement-card a {
     color: #527462;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 
-/* =========================
+/* ==============================
    CONTACT
-========================= */
+============================== */
 
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
     align-items: center;
+    gap: 80px;
+    background: #f8f7f2;
 }
 
 .contact-content > p:not(.section-label) {
-    color: #68726f;
+    color: #68736f;
     margin-bottom: 25px;
 }
 
 .contact-details p {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 .contact-form {
@@ -438,30 +504,31 @@ header {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 16px;
-    border: 1px solid #d7dcd5;
-    border-radius: 4px;
+    border: 1px solid #d6ddd8;
+    border-radius: 5px;
     background: white;
-    font-family: inherit;
-    font-size: 15px;
+    padding: 15px;
     outline: none;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #527462;
+    border-color: #668574;
+}
+
+.contact-form textarea {
+    resize: vertical;
 }
 
 .contact-form button {
     border: none;
     cursor: pointer;
-    font-size: 15px;
 }
 
 
-/* =========================
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer {
     background: #102b27;
@@ -478,7 +545,7 @@ footer {
 
 .footer-content .logo {
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .footer-content p {
@@ -487,8 +554,8 @@ footer {
 
 .footer-links {
     display: flex;
-    gap: 25px;
     align-items: center;
+    gap: 25px;
 }
 
 .footer-links a {
@@ -501,152 +568,113 @@ footer {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #9eaba6;
     font-size: 13px;
 }
 
-/* =========================
-   MOBILE MENU
-========================= */
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-}
+/* ==============================
+   TABLET
+============================== */
 
-.mobile-menu {
-    display: none;
-}
-
-/* =========================
-   IMAGE HOVER EFFECTS
-========================= */
-
-.section-image,
-.campaign-image {
-    overflow: hidden;
-    border-radius: 6px;
-}
-
-.section-image img,
-.campaign-image img {
-    transition: transform 0.6s ease;
-}
-
-.section-image:hover img,
-.campaign-image:hover img {
-    transform: scale(1.04);
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .nav-links {
-        display: none;
-    }
-.menu-toggle {
-    display: block;
-}
-
-.mobile-menu {
-    position: absolute;
-    top: 80px;
-    left: 5%;
-    width: 90%;
-    background: #173a35;
-    padding: 25px;
-    border-radius: 8px;
-    flex-direction: column;
-    gap: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.mobile-menu.active {
-    display: flex;
-}
-
-.mobile-menu a {
-    color: white;
-    font-size: 15px;
-}
-
-.mobile-menu a:hover {
-    color: #d9ad73;
-}
-
-.mobile-donate {
-    background: #d79b55;
-    padding: 11px 15px;
-    text-align: center;
-    border-radius: 4px;
-}
-    .navbar {
-        width: 90%;
-    }
-
-    .section {
-        padding: 75px 6%;
-    }
-
-    .about,
-    .campaign,
-    .contact {
-        grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 18px;
     }
 
     .cause-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .impact-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-        padding-bottom: 25px;
-    }
-
-    .involvement-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading h2,
-    .section-content h2,
-    .campaign-content h2,
-    .contact-content h2 {
-        font-size: 38px;
+    .about,
+    .campaign,
+    .contact {
+        gap: 45px;
     }
 }
 
 
-@media (max-width: 600px) {
+/* ==============================
+   MOBILE
+============================== */
 
-    .nav-button {
+@media (max-width: 760px) {
+
+    .section {
+        padding: 75px 6%;
+    }
+
+    .navbar {
+        width: 88%;
+        padding: 20px 0;
+    }
+
+    .nav-links,
+    .navbar .nav-button {
         display: none;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 78px;
+        left: 6%;
+        width: 88%;
+        padding: 25px;
+        background: #173a35;
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: white;
+        font-size: 14px;
+    }
+
+    .mobile-menu a:hover {
+        color: #d9ad73;
+    }
+
+    .mobile-donate {
+        background: #d79b55;
+        padding: 11px 15px;
+        text-align: center;
+        border-radius: 4px;
+    }
+
     .hero {
+        min-height: 90vh;
         padding: 130px 6% 80px;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 50px;
     }
 
     .hero-content > p:not(.eyebrow) {
         font-size: 16px;
+    }
+
+    .about,
+    .campaign,
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .cause-grid {
@@ -655,10 +683,20 @@ footer {
 
     .impact-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .impact-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .impact-item h3 {
         font-size: 38px;
+    }
+
+    .involvement-grid {
+        grid-template-columns: 1fr;
     }
 
     .section-image img,
@@ -672,5 +710,39 @@ footer {
 
     .footer-links {
         flex-wrap: wrap;
+    }
+}
+
+
+/* ==============================
+   SMALL PHONES
+============================== */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .section-image img,
+    .campaign-image img {
+        height: 320px;
     }
 }
