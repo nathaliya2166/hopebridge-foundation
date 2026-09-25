@@ -650,14 +650,15 @@ footer .logo span {
     }
 
     .mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        padding: 15px 6%;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 6%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+}
 
     .mobile-menu.active {
         display: block;
