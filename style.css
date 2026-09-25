@@ -1,7 +1,6 @@
-/* ==============================
+/* ========================================
    HOPEBRIDGE FOUNDATION
-   Main Stylesheet
-================================= */
+   ======================================== */
 
 * {
     margin: 0;
@@ -15,48 +14,62 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    color: #24352f;
     background: #f8f6ef;
+    color: #24352f;
     line-height: 1.7;
 }
 
-/* ==============================
-   NAVBAR
-================================= */
+img {
+    display: block;
+    max-width: 100%;
+}
 
-.navbar {
-    width: 100%;
-    padding: 20px 8%;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+a {
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background: #ffffff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
 }
 
 .logo {
     font-family: Georgia, serif;
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
     color: #173f35;
     text-decoration: none;
 }
 
+.logo span {
+    color: #3d8068;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
     list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
     color: #24352f;
+    text-decoration: none;
     font-size: 15px;
-    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -65,9 +78,11 @@ body {
 
 .nav-button {
     background: #173f35;
-    color: #ffffff !important;
-    padding: 10px 20px;
+    color: #ffffff;
+    padding: 11px 22px;
     border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .nav-button:hover {
@@ -76,174 +91,245 @@ body {
 
 .menu-toggle {
     display: none;
+    border: none;
+    background: transparent;
+    color: #173f35;
     font-size: 28px;
     cursor: pointer;
 }
 
-/* ==============================
-   HERO
-================================= */
-
-.hero {
-    min-height: 88vh;
-    padding: 80px 8%;
-    display: flex;
-    align-items: center;
-    background:
-        linear-gradient(rgba(23, 63, 53, 0.72), rgba(23, 63, 53, 0.72)),
-        url("https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
+.mobile-menu {
+    display: none;
 }
 
-.hero-content {
-    max-width: 700px;
-    color: #ffffff;
-}
-
-.hero-content h1 {
-    font-family: Georgia, serif;
-    font-size: 58px;
-    line-height: 1.15;
-    margin-bottom: 25px;
-}
-
-.hero-content p {
-    font-size: 19px;
-    max-width: 620px;
-    margin-bottom: 35px;
-}
-
-.hero-button {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #ffffff;
-    color: #173f35;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.hero-button:hover {
-    transform: translateY(-3px);
-}
-
-/* ==============================
-   GENERAL SECTIONS
-================================= */
+/* ========================================
+   GENERAL
+   ======================================== */
 
 .section {
     padding: 100px 8%;
 }
 
-.section-title {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 55px;
+.section-label {
+    color: #3d8068;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-.section-title h2 {
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2,
+.section-content h2,
+.campaign-content h2,
+.contact-content h2 {
     font-family: Georgia, serif;
-    font-size: 42px;
     color: #173f35;
+    line-height: 1.2;
+}
+
+.section-heading h2 {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.section-title p {
+.section-heading > p:last-child {
     color: #66736e;
 }
 
-/* ==============================
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding: 90px 8%;
+    background:
+        linear-gradient(
+            rgba(23, 63, 53, 0.72),
+            rgba(23, 63, 53, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=80")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 720px;
+    color: #ffffff;
+}
+
+.hero .eyebrow {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    line-height: 1.12;
+    margin-bottom: 25px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary-button {
+    background: #173f35;
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: #3d8068;
+    transform: translateY(-2px);
+}
+
+.hero .primary-button {
+    background: #ffffff;
+    color: #173f35;
+}
+
+.secondary-button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.secondary-button:hover {
+    background: #ffffff;
+    color: #173f35;
+}
+
+/* ========================================
    ABOUT
-================================= */
+   ======================================== */
 
 .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
     background: #ffffff;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about-image img {
+.section-image img {
     width: 100%;
-    height: 450px;
+    height: 460px;
     object-fit: cover;
     border-radius: 20px;
 }
 
-.about-text h2 {
-    font-family: Georgia, serif;
-    font-size: 40px;
-    color: #173f35;
-    margin-bottom: 20px;
+.section-content h2 {
+    font-size: 42px;
+    margin-bottom: 22px;
 }
 
-.about-text p {
-    margin-bottom: 18px;
+.section-content > p:not(.section-label) {
     color: #66736e;
+    margin-bottom: 18px;
 }
 
-/* ==============================
+.text-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #173f35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    color: #3d8068;
+}
+
+/* ========================================
    CAUSES
-================================= */
+   ======================================== */
 
 .causes {
     background: #f8f6ef;
 }
 
-.causes-grid {
+.cause-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
 }
 
 .cause-card {
     background: #ffffff;
-    padding: 35px;
+    padding: 32px 25px;
     border-radius: 18px;
-    text-align: center;
-    transition: 0.3s;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
 .cause-card:hover {
     transform: translateY(-7px);
 }
 
-.cause-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 22px;
+.cause-icon {
+    font-size: 38px;
+    margin-bottom: 18px;
 }
 
 .cause-card h3 {
     font-family: Georgia, serif;
     color: #173f35;
-    font-size: 25px;
+    font-size: 23px;
     margin-bottom: 12px;
 }
 
 .cause-card p {
     color: #66736e;
+    font-size: 15px;
+    margin-bottom: 18px;
 }
 
-/* ==============================
+.cause-card a {
+    color: #173f35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ========================================
    IMPACT
-================================= */
+   ======================================== */
 
 .impact {
     background: #173f35;
     color: #ffffff;
 }
 
-.impact .section-title h2,
-.impact .section-title p {
+.impact .section-label {
+    color: #b8d3c5;
+}
+
+.impact .section-heading h2 {
     color: #ffffff;
 }
 
@@ -254,33 +340,30 @@ body {
     text-align: center;
 }
 
-.impact-box {
+.impact-item {
     padding: 25px;
 }
 
-.impact-box h3 {
+.impact-item h3 {
     font-family: Georgia, serif;
-    font-size: 45px;
+    font-size: 44px;
     margin-bottom: 5px;
 }
 
-.impact-box p {
+.impact-item p {
     opacity: 0.85;
 }
 
-/* ==============================
-   FEATURED CAMPAIGN
-================================= */
+/* ========================================
+   CAMPAIGN
+   ======================================== */
 
 .campaign {
-    background: #ffffff;
-}
-
-.campaign-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 55px;
+    gap: 65px;
     align-items: center;
+    background: #ffffff;
 }
 
 .campaign-image img {
@@ -290,103 +373,101 @@ body {
     border-radius: 20px;
 }
 
-.campaign-text h2 {
-    font-family: Georgia, serif;
-    font-size: 40px;
-    color: #173f35;
+.campaign-content h2 {
+    font-size: 42px;
     margin-bottom: 20px;
 }
 
-.campaign-text p {
+.campaign-content > p:not(.section-label) {
     color: #66736e;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
-.campaign-button {
-    display: inline-block;
-    background: #173f35;
-    color: #ffffff;
-    padding: 13px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.campaign-button:hover {
-    background: #3d8068;
-}
-
-/* ==============================
+/* ========================================
    GET INVOLVED
-================================= */
+   ======================================== */
 
 .get-involved {
     background: #e7eee8;
 }
 
-.involved-grid {
+.involvement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.involved-card {
+.involvement-card {
     background: #ffffff;
-    padding: 35px;
+    padding: 35px 30px;
     border-radius: 18px;
     text-align: center;
 }
 
-.involved-card h3 {
+.involvement-card h3 {
     font-family: Georgia, serif;
     color: #173f35;
-    margin-bottom: 12px;
     font-size: 25px;
+    margin-bottom: 12px;
 }
 
-.involved-card p {
+.involvement-card p {
     color: #66736e;
     margin-bottom: 20px;
 }
 
-.involved-card a {
+.involvement-card a {
     color: #173f35;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* ==============================
+/* ========================================
    CONTACT
-================================= */
+   ======================================== */
 
 .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
     background: #ffffff;
 }
 
-.contact-container {
-    max-width: 850px;
-    margin: auto;
+.contact-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.contact-content > p:not(.section-label) {
+    color: #66736e;
+    margin-bottom: 25px;
+}
+
+.contact-details {
+    margin-top: 25px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    color: #4f5e58;
 }
 
 .contact-form {
     display: grid;
-    gap: 18px;
+    gap: 17px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px 18px;
-    border: 1px solid #d8ded9;
+    padding: 15px 17px;
+    border: 1px solid #d7ded9;
     border-radius: 10px;
+    background: #fafafa;
     font-family: Arial, sans-serif;
     font-size: 15px;
     outline: none;
-}
-
-.contact-form textarea {
-    min-height: 160px;
-    resize: vertical;
 }
 
 .contact-form input:focus,
@@ -394,55 +475,128 @@ body {
     border-color: #3d8068;
 }
 
+.contact-form textarea {
+    resize: vertical;
+}
+
 .contact-form button {
     width: fit-content;
     border: none;
-    padding: 13px 28px;
-    border-radius: 25px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+/* ========================================
+   SOCIAL LINKS
+   ======================================== */
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links h3 {
+    font-family: Georgia, serif;
+    color: #173f35;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    border: 1px solid #cfd9d3;
+    border-radius: 20px;
+    color: #173f35;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.social-links a:hover {
     background: #173f35;
     color: #ffffff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.contact-form button:hover {
-    background: #3d8068;
-}
-
-/* ==============================
+/* ========================================
    FOOTER
-================================= */
+   ======================================== */
 
 footer {
     background: #102d27;
     color: #ffffff;
-    text-align: center;
-    padding: 30px 8%;
+    padding: 45px 8% 25px;
 }
 
-footer p {
-    font-size: 14px;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+footer .logo {
+    color: #ffffff;
+}
+
+footer .logo span {
+    color: #b8d3c5;
+}
+
+.footer-content p {
+    margin-top: 12px;
     opacity: 0.8;
 }
 
-/* ==============================
+.footer-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* ========================================
    ANIMATIONS
-================================= */
+   ======================================== */
 
 .hero-content,
-.about-container,
+.section-image,
+.section-content,
 .cause-card,
-.impact-box,
-.campaign-container,
-.involved-card {
-    animation: fadeUp 0.8s ease both;
+.impact-item,
+.campaign-image,
+.campaign-content,
+.involvement-card,
+.contact-content,
+.contact-form {
+    animation: fadeUp 0.7s ease both;
 }
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
 
     to {
@@ -451,56 +605,48 @@ footer p {
     }
 }
 
-/* ==============================
-   MOBILE MENU
-================================= */
-
-.mobile-menu {
-    display: none;
-}
-
-/* ==============================
+/* ========================================
    TABLET
-================================= */
+   ======================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    .hero-content h1 {
-        font-size: 48px;
-    }
-
-    .about-container,
-    .campaign-container {
-        grid-template-columns: 1fr;
-    }
-
-    .causes-grid,
-    .involved-grid {
+    .cause-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about,
+    .campaign,
+    .contact {
+        grid-template-columns: 1fr;
     }
 
     .impact-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .involvement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* ==============================
+/* ========================================
    MOBILE
-================================= */
+   ======================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .navbar {
         padding: 17px 6%;
     }
 
-    .nav-links {
+    .nav-links,
+    .nav-button {
         display: none;
     }
 
     .menu-toggle {
         display: block;
-        color: #173f35;
     }
 
     .mobile-menu {
@@ -509,7 +655,7 @@ footer p {
         left: 0;
         width: 100%;
         background: #ffffff;
-        padding: 20px 6%;
+        padding: 15px 6%;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
@@ -520,53 +666,62 @@ footer p {
     .mobile-menu a {
         display: block;
         padding: 12px 0;
+        border-bottom: 1px solid #eeeeee;
         color: #173f35;
         text-decoration: none;
-        border-bottom: 1px solid #eeeeee;
     }
 
-    .hero {
-        min-height: 75vh;
-        padding: 70px 6%;
-    }
-
-    .hero-content h1 {
-        font-size: 38px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
+    .mobile-donate {
+        font-weight: bold;
     }
 
     .section {
         padding: 70px 6%;
     }
 
-    .section-title h2 {
+    .hero {
+        min-height: 78vh;
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+    .section-heading h2,
+    .section-content h2,
+    .campaign-content h2,
+    .contact-content h2 {
         font-size: 32px;
     }
 
-    .about-text h2,
-    .campaign-text h2 {
-        font-size: 32px;
+    .section-image img {
+        height: 320px;
     }
 
-    .about-image img,
     .campaign-image img {
-        height: 300px;
+        height: 320px;
     }
 
-    .causes-grid,
-    .involved-grid,
-    .impact-grid {
+    .cause-grid,
+    .impact-grid,
+    .involvement-grid {
         grid-template-columns: 1fr;
     }
 
-    .cause-card img {
-        height: 200px;
+    .footer-content {
+        flex-direction: column;
     }
 
-    .impact-box h3 {
-        font-size: 38px;
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .contact {
+        gap: 40px;
     }
 }
